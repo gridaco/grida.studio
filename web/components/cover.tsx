@@ -1,16 +1,26 @@
 "use client";
-
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from "@emotion/styled";
 import Image from "next/image";
 
 export function Cover({ image, video }: { image: string; video?: string }) {
   const [isHovered, setIsHovered] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
     <Wrapper
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => {
+        setIsHovered(true);
+        if (videoRef.current) {
+          videoRef.current.play();
+        }
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        if (videoRef.current) {
+          videoRef.current.pause();
+        }
+      }}
     >
       <Image
         className="mt-8 max-h-[800px] w-full object-cover aspect-video"
@@ -22,11 +32,11 @@ export function Cover({ image, video }: { image: string; video?: string }) {
 
       {video && (
         <video
+          ref={videoRef}
           className={`cover-video mt-8 max-h-[800px] w-full object-cover aspect-video ${
             isHovered ? "show" : ""
           }`}
           src={video}
-          autoPlay
           loop
           muted
           playsInline
