@@ -1,5 +1,6 @@
 {
   "2019-ryde": {
+    "key": "2019-ryde",
     "title": "RYDE",
     "description": "Introducing RYDE, the pioneering e-scooter sharing mobility service that took the streets of South Korea by storm.",
     "tags": ["Brand Identity"],
@@ -22,6 +23,7 @@
     "related": ["2023-eventy"]
   },
   "2023-eventy": {
+    "key": "2023-eventy",
     "title": "eventy",
     "description": "Introducing \"eventy,\" the ultimate solution for effortless offline event planning. Streamlining every detail from venue selection to guest management, \"eventy\" transforms event coordination into a hassle-free experience. Whether you're planning a corporate gathering or an intimate soirée, \"eventy\" is your trusted partner in orchestrating memorable moments with ease. Simplify, organize, and celebrate with \"eventy.\"",
     "tags": ["Brand Identity"],
@@ -40,6 +42,7 @@
     "related": ["2023-sweaterhouse"]
   },
   "2023-the-bundle": {
+    "key": "2023-the-bundle",
     "title": "The Bundle",
     "description": "Meet \"The Bundle,\" the go-to resource for designers in search of top-tier, pre-rendered 3D visuals. With its rich library of high-resolution images, \"The Bundle\" simplifies the creative process, allowing for enhanced realism in UI/UX projects with minimal effort. It's not just a tool; it's a game-changer for any design enthusiast aiming for excellence without the hassle. With \"The Bundle,\" designers are one step closer to bringing their most ambitious visions to life.",
     "tags": ["Brand Identity"],
@@ -59,6 +62,7 @@
     "related": ["2023-sweaterhouse"]
   },
   "2023-sweaterhouse": {
+    "key": "2023-sweaterhouse",
     "title": "SWEATERHOUSE",
     "description": "Discover \"SWEATERHOUSE,\" where Korean innovation meets unparalleled comfort in seamless knitwear. Excelling in whole-garment technology, this brand crafts elegant, one-piece creations for a flawless fit and sophisticated style. \"SWEATERHOUSE\" stands as a testament to sleek design and futuristic craftsmanship, changing the knitwear game one stitch at a time.",
     "tags": ["Logo", "Brand Identity"],
@@ -74,6 +78,7 @@
     "related": ["2019-ryde"]
   },
   "2022-posts-cms": {
+    "key": "2022-posts-cms",
     "title": "Posts CMS",
     "description": "Introducing Grida Posts CMS – the ultimate solution for all your blogging and news page needs. Grida Posts CMS is a powerful WYSIWYG editor and Software as a Service (SaaS) platform that puts customization at the forefront. With an incredibly user-friendly admin interface, it empowers you to craft your own unique blog or news page effortlessly. Not just for creators but also for end-users, Grida Posts CMS offers a custom-developed frontend page through our API.",
     "tags": ["Solution", "Web", "CMS"],
@@ -93,6 +98,7 @@
     "related": ["2022-makersmark.co.kr"]
   },
   "2022-grida-code": {
+    "key": "2022-grida-code",
     "title": "Grida Code",
     "description": "",
     "tags": ["Product", "Web", "Tech"],
@@ -111,6 +117,7 @@
     "related": ["2022-posts-cms"]
   },
   "2022-makersmark.co.kr": {
+    "key": "2022-makersmark.co.kr",
     "title": "Maker's Mark Korea",
     "description": "",
     "tags": ["Publishing", "Web", "CMS"],

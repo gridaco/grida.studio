@@ -1,4 +1,5 @@
 export interface Work {
+  key: string;
   title: string;
   description: string;
   cover: string;
