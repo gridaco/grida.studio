@@ -12,7 +12,7 @@ export function Layout({
   children,
 }: React.PropsWithChildren<{
   meta: Work & {
-    next: Work;
+    next?: Work;
   };
 }>) {
   return (
@@ -22,18 +22,21 @@ export function Layout({
         tags={meta.tags}
         description={meta.description}
       />
-      <div className="flex flex-col gap-6">
-        {meta.images.map((image, i) => (
+      {/* <div className="flex flex-col gap-6">
+        {meta.images?.map((image, i) => (
           <Picture key={i} src={image} alt="" width={1920} height={1080} />
         ))}
-      </div>
-      <NextWork
-        work={meta.next.work}
-        title={meta.next.title}
-        tags={meta.next.tags}
-        description={meta.next.description}
-        cover={meta.next.cover}
-      />
+      </div> */}
+      {children}
+      {meta.next && (
+        <NextWork
+          work={meta.next.work}
+          title={meta.next.title}
+          tags={meta.next.tags}
+          description={meta.next.description}
+          cover={meta.next.cover}
+        />
+      )}
     </div>
   );
 }
