@@ -1,5 +1,5 @@
 export interface Work {
-  key: string;
+  work: string;
   title: string;
   description: string;
   cover: string;

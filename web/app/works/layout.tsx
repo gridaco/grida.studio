@@ -3,5 +3,5 @@ export default function WorkLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div>{children}</div>;
+  return <div className="flex flex-col mt-40 gap-5">{children}</div>;
 }
