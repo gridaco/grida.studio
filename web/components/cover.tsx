@@ -23,7 +23,8 @@ export function Cover({ image, video }: { image: string; video?: string }) {
       }}
     >
       <Image
-        className="mt-8 max-h-[800px] w-full object-cover aspect-video"
+        className="mt-8 max-h-[800px] w-full object-cover aspect-video bg-neutral-500"
+        priority
         src={image}
         width={1920}
         height={800}
