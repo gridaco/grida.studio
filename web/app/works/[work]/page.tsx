@@ -1,8 +1,9 @@
 import React from "react";
 import type { Metadata, ResolvingMetadata } from "next";
-import type { Work } from "@/types/work";
-import portfolios from "@/k/portfolio.json";
 import { Layout } from "@/components/layout";
+import { allPosts } from "contentlayer/generated";
+import { getMDXComponent } from "next-contentlayer/hooks";
+import { Picture } from "@/components/picture";
 
 interface Props {
   params: {
@@ -14,36 +15,49 @@ export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || [];
+  const work = allPosts.find((post) => post._raw.flattenedPath === params.work);
 
-  const work: Work = (portfolios as any)[params.work];
+  if (!work) {
+    throw new Error(`Could not find work with path ${params.work}`);
+  }
 
   return {
     title: { absolute: work.title },
     description: work.title,
-    metadataBase: new URL("https://studio.grida.co"),
     openGraph: {
-      images: [work.images[0], ...previousImages],
+      images: [work.cover],
     },
   };
 }
 
-export default function WorkDetailPage({ params }: Props) {
-  const work: Work = (portfolios as any)[params.work];
-  const nextworkkey = work.related[0];
-  const nextwork: Work = (portfolios as any)[nextworkkey];
+const components = {
+  img: (props: any) => (
+    <div className="mt-5">
+      <Picture {...props} width={1920} height={1080} />
+    </div>
+  ),
+};
 
-  if (!work) {
-    return <div>404</div>;
-  }
+export default function WorkDetailPage({ params }: Props) {
+  const work = allPosts.find(
+    (post) => post._raw.flattenedPath === params.work
+  )!;
+  const Content = getMDXComponent(work.body.code);
+  const nextworkkey = work.related?.[0];
+  const nextwork = allPosts.find(
+    (post) => post._raw.flattenedPath === nextworkkey
+  );
 
   return (
-    <Layout
-      meta={{
-        ...work,
-        next: nextwork,
-      }}
-    />
+    <div>
+      <Layout
+        meta={{
+          ...work,
+          next: nextwork,
+        }}
+      >
+        <Content components={components} />
+      </Layout>
+    </div>
   );
 }

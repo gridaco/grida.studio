@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import type { Work } from "@/types/work";
-import { Picture } from "./picture";
+import type { Post } from "contentlayer/generated";
 
 /**
  * Portfolio (Work) page layout
@@ -11,30 +10,28 @@ export function Layout({
   meta,
   children,
 }: React.PropsWithChildren<{
-  meta: Work & {
-    next: Work;
+  meta: Post & {
+    next?: Post;
   };
 }>) {
   return (
-    <div>
+    <article>
       <WorkHeader
         title={meta.title}
         tags={meta.tags}
         description={meta.description}
       />
-      <div className="flex flex-col gap-6">
-        {meta.images.map((image, i) => (
-          <Picture key={i} src={image} alt="" width={1920} height={1080} />
-        ))}
-      </div>
-      <NextWork
-        work={meta.next.work}
-        title={meta.next.title}
-        tags={meta.next.tags}
-        description={meta.next.description}
-        cover={meta.next.cover}
-      />
-    </div>
+      {children}
+      {meta.next && (
+        <NextWork
+          work={meta.next._raw.flattenedPath}
+          title={meta.next.title}
+          tags={meta.next.tags}
+          description={meta.next.description}
+          cover={meta.next.cover}
+        />
+      )}
+    </article>
   );
 }
 
