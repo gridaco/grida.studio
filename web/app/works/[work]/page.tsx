@@ -1,10 +1,9 @@
 import React from "react";
 import type { Metadata, ResolvingMetadata } from "next";
-import type { Work } from "@/types/work";
-// import portfolios from "@/k/portfolio.json";
 import { Layout } from "@/components/layout";
-import { allPosts, Post } from "contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
+import { Picture } from "@/components/picture";
 
 interface Props {
   params: {
@@ -31,28 +30,34 @@ export async function generateMetadata(
   };
 }
 
+const components = {
+  img: (props: any) => (
+    <div className="mt-5">
+      <Picture {...props} width={1920} height={1080} />
+    </div>
+  ),
+};
+
 export default function WorkDetailPage({ params }: Props) {
-  const work = allPosts.find((post) => post._raw.flattenedPath === params.work);
-  if (!work) {
-    return <div>404</div>;
-  }
-  // const work: Work = (portfolios as any)[params.work];
+  const work = allPosts.find(
+    (post) => post._raw.flattenedPath === params.work
+  )!;
+  const Content = getMDXComponent(work.body.code);
   const nextworkkey = work.related?.[0];
   const nextwork = allPosts.find(
     (post) => post._raw.flattenedPath === nextworkkey
   );
 
-  const Content = getMDXComponent(work.body.code);
-
   return (
-    <Layout
-      meta={{
-        ...work,
-        // @ts-ignore
-        next: nextwork,
-      }}
-    >
-      <Content />
-    </Layout>
+    <div>
+      <Layout
+        meta={{
+          ...work,
+          next: nextwork,
+        }}
+      >
+        <Content components={components} />
+      </Layout>
+    </div>
   );
 }
