@@ -5,6 +5,7 @@ description: Introducing "eventy," the ultimate solution for effortless offline 
 cover: /works/2023-eventy/1.png
 tags:
   - Brand Identity
+  - Logo
 related:
   - sweaterhouse
 ---
