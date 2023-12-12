@@ -44,7 +44,7 @@ const HomeHeroItem = ({
             color: color,
           }}
         >
-          <h1 className='text-3xl font-bold opacity-90'>{title}</h1>
+          <h1 className='text-3xl font-bold opacity-90 hover:underline'>{title}</h1>
           {description && <p className='text-xl opacity-80 max-w-[80vw]'>{description}</p>}
         </span>
       </div>

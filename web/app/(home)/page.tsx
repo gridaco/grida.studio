@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <main className="relative">
 
-      <HomeHeroCarousel>
+      <HomeHeroCarousel interval={6000}>
         {
           hero_posts.map((post, i) => (
             <Link key={i} href={`/works/${post._raw.flattenedPath}`}>

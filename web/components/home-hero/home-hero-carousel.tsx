@@ -42,12 +42,8 @@ const HomeHeroCarousel = ({ children, interval = 5000, transition = { duration: 
               key={index}
               initial={hasMounted.current ? { x: '100vw' } : {}}
               animate={{ x: 0 }}
-              exit={{ x: '-100vw' }}
-              transition={
-                hasMounted.current ?
-                  { ...transition, ease: 'easeInOut' }
-                  : {}
-              }
+              exit={{ x: '-100vw', transition: { duration: transition.duration, ease: 'easeInOut' } }}
+              transition={hasMounted.current ? { ...transition, ease: 'easeInOut' } : {}}
             >
               {child}
             </motion.div>
