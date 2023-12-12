@@ -28,7 +28,7 @@ export function Layout({
           work={meta.next._raw.flattenedPath}
           title={meta.next.title}
           tags={meta.next.tags}
-          description={meta.next.description}
+          description={meta.next.description_short ?? meta.next.description}
           cover={meta.next.cover}
         />
       )}

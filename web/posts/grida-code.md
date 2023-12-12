@@ -2,7 +2,8 @@
 title: Grida Code
 date: 2021-12
 external_url: "https://code.grida.co"
-description:
+description_short: Grida Code Engine Development
+description: Grida Code is a IDE for visually designing and developing components
 cover: "/works/2022-grida-code/0.png"
 tags:
   - Solution

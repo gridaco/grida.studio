@@ -4,7 +4,7 @@ date: 2023-09
 cover: /works/2023-the-bundle/1.png
 cover_video: /works/2023-the-bundle/teaser.mp4
 external_url: "https://grida.co/bundle/"
-short_description: A bundle of 3D models
+description_short: The Bundle, Open Souce Graphics Asset Repository
 description:
   Meet "The Bundle," the go-to resource for designers in search of top-tier,
   pre-rendered 3D visuals. With its rich library of high-resolution images,
