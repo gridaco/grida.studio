@@ -2,10 +2,19 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { SlashIcon } from '@radix-ui/react-icons';
 
 
-const HomeHeroCarousel = ({ children, interval = 5000 }: React.PropsWithChildren<{
+const HomeHeroCarousel = ({ children,
+  interval = 5000,
+  transition = {
+    duration: 0.4,
+  }
+}: React.PropsWithChildren<{
   interval?: number;
+  transition?: {
+    duration: number;
+  }
 }>) => {
   const [current, setCurrent] = useState(0);
   const childrenArray = React.Children.toArray(children);
@@ -30,13 +39,13 @@ const HomeHeroCarousel = ({ children, interval = 5000 }: React.PropsWithChildren
         {React.Children.map(children, (child, index) =>
           index === current ? (
             <motion.div
-              className='h-full w-full'
+              className='absolute h-full w-full'
               key={index}
               initial={{ x: '100vw' }}
               animate={{ x: 0 }}
               exit={{ x: '-100vw' }}
               transition={{
-                duration: 1,
+                ...transition,
                 ease: 'easeInOut',
               }}
             >
@@ -45,8 +54,14 @@ const HomeHeroCarousel = ({ children, interval = 5000 }: React.PropsWithChildren
           ) : null
         )}
       </AnimatePresence>
-      <div className="absolute bottom-0 right-0 p-12">
-        <span>{`${current + 1}/${childrenArray.length}`}</span>
+      <div className="absolute bottom-0 right-0 p-4 md:p-12 text-white">
+        <span
+          className='text-xl font-medium flex items-center gap-2'
+        >
+          {current + 1}
+          <SlashIcon />
+          {childrenArray.length}
+        </span>
       </div>
     </div>
   );

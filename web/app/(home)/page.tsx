@@ -6,12 +6,10 @@ import HomeHeroCarousel from "@/components/home-hero/home-hero-carousel";
 import HomeHeroItem from "@/components/home-hero/home-hero-carousel-item";
 
 
-
 export default function Home() {
   const posts = allPosts.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date))
   );
-
 
   const hero_posts = posts.filter((post) => post.featured);
 
@@ -22,7 +20,15 @@ export default function Home() {
         {
           hero_posts.map((post, i) => (
             <Link key={i} href={`/works/${post._raw.flattenedPath}`}>
-              <HomeHeroItem key={i} title={post.title} description={post.description_short} cover={post.cover} coverVideo={post.cover_video} />
+              <HomeHeroItem
+                key={i}
+                title={post.title}
+                description={post.description_short}
+                cover={post.cover}
+                coverVideo={post.cover_video}
+                color={post.cover_foreground}
+                backgroundColor={post.cover_background}
+              />
             </Link>
           ))
         }
