@@ -1,6 +1,7 @@
 ---
 title: Grida Code
 date: 2021-12
+external_url: "https://code.grida.co"
 description:
 cover: "/works/2022-grida-code/0.png"
 tags:

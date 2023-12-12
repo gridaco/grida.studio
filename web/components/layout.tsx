@@ -20,6 +20,7 @@ export function Layout({
         title={meta.title}
         tags={meta.tags}
         description={meta.description}
+        url={meta.external_url}
       />
       {children}
       {meta.next && (
@@ -41,6 +42,7 @@ interface WorkPreviewProps {
   tags: string[];
   description: string;
   cover: string;
+  url?: string;
 }
 
 export function NextWork({
@@ -69,6 +71,7 @@ export function NextWork({
 export function WorkHeader({
   title,
   tags,
+  url,
   description,
 }: Omit<WorkPreviewProps, "work" | "cover">) {
   return (
@@ -77,6 +80,13 @@ export function WorkHeader({
         <h1 className="text-6xl font-bold">{title}</h1>
         <span className="text-xl font-regular text-neutral-500">
           {tags?.join(", ")}
+          {url && (
+            <div className="mt-2">
+              <Link href={url} target="_blank" className="underline">
+                View Project
+              </Link>
+            </div>
+          )}
         </span>
       </div>
       <div className="flex-1 md:mt-0 mt-8">

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About",
@@ -47,6 +48,12 @@ export default function About() {
             real-world product building. We&apos;ve seen firsthand how design
             and technology can synergize to create solutions that not only look
             good but also function seamlessly.
+            <br />
+            <br />
+            <Link
+              className="underline"
+              href="https://github.com/gridaco">Check out our Github</Link>
+            {" "}to learn more about our works.
           </p>
         </div>
       </section>

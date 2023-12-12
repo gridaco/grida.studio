@@ -1,6 +1,7 @@
 ---
 title: RYDE
 date: 2019-02
+external_url: "https://swingmobility.co/"
 description: Introducing RYDE, the pioneering e-scooter sharing mobility service that took the streets of South Korea by storm.
 cover: /works/2019-ryde/5.png
 tags:
@@ -22,4 +23,4 @@ related:
 ![image](/works/2019-ryde/8.png)
 ![image](/works/2019-ryde/9.png)
 ![image](/works/2019-ryde/10.png)
-![image](/works/2019-ryde/11.pn)
+![image](/works/2019-ryde/11.png)
