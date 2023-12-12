@@ -17,6 +17,7 @@ tags:
   - Brand Identity
 related:
   - sweaterhouse
+featured: true
 ---
 
 <video

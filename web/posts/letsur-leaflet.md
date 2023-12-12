@@ -8,6 +8,7 @@ tags:
   - Leaflet
 related:
   - eventy
+featured: true
 ---
 
 ![](/works/2023-letsur-leaflet/1.png)

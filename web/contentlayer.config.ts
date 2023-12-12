@@ -15,6 +15,7 @@ export const Post = defineDocumentType(() => ({
     cover: { type: "string", required: true },
     cover_video: { type: "string", required: false },
     related: { type: "list", of: { type: "string" }, required: false },
+    featured: { type: "boolean", required: false },
   },
   computedFields: {
     url: {

@@ -11,6 +11,7 @@ tags:
   - Tech
 related:
   - grida-posts
+featured: true
 ---
 
 ![](/works/2022-makersmark.co.kr/0.png)
