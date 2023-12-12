@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { Header } from "@/components/header";
 import GoogleAnalytics from "@/components/ga";
 
@@ -28,10 +28,8 @@ export default function RootLayout({
       <GoogleAnalytics gaid={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ?? ''} />
       <body className={inter.className}>
         {/* TODO: fix min-h-screen */}
-        <main className="md:pl-12 md:pr-12 m-auto max-w-screen-2xl pl-4 pr-4 min-h-screen">
-          <Header />
-          {children}
-        </main>
+        <Header />
+        {children}
       </body>
     </html>
   );
