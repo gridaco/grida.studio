@@ -5,6 +5,8 @@ external_url: "https://makersmark.co.kr/"
 description:
 cover: "/works/2022-makersmark.co.kr/0.png"
 cover_video: "/works/2022-makersmark.co.kr/teaser.mp4"
+cover_background: "#F2E9D1"
+cover_foreground: "#BE2035"
 tags:
   - Solution
   - Web
