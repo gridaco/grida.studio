@@ -13,18 +13,18 @@ export function Picture({ disableEnlarge, onClick, ...props }: PictureProps) {
 
   return (
     <div
-      className="select-none"
+      className="select-none cursor-default"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{ position: "relative" }}
-      onClick={onClick}
     >
       <Image {...props} alt={props.alt} />
 
       {hovered && !disableEnlarge && (
-        <div className="absolute z-10 inset-0 cursor-pointer">
+        <div className="absolute z-10 inset-0">
           <button
-            className="absolute left-4 bottom-4 z-10 p-4 pt-2 pb-2 bg-neutral-700 bg-opacity-50 flex items-center gap-2 rounded-3xl text-white"
+            className="absolute left-4 bottom-4 z-10 p-4 pt-2 pb-2 cursor-pointer bg-neutral-700 bg-opacity-50 flex items-center gap-2 rounded-3xl text-white"
+            onClick={onClick}
           >
             <PlusIcon /> Enlarge
           </button>
