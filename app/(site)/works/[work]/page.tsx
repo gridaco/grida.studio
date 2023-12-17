@@ -3,7 +3,8 @@ import type { Metadata, ResolvingMetadata } from "next";
 import { Layout } from "@/components/layout";
 import { allPosts } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
-import { Picture } from "@/components/picture";
+import FuctionalPicture from "@/scaffolds/picture";
+import { EnlargeModal, EnlargeProvider } from "@/scaffolds/enlarge";
 
 interface Props {
   params: {
@@ -33,7 +34,7 @@ export async function generateMetadata(
 const components = {
   img: (props: any) => (
     <div className="mt-5">
-      <Picture {...props} width={1920} height={1080} />
+      <FuctionalPicture {...props} width={1920} height={1080} />
     </div>
   ),
 };
@@ -48,6 +49,7 @@ export default function WorkDetailPage({ params }: Props) {
     (post) => post._raw.flattenedPath === nextworkkey
   );
 
+
   return (
     <div>
       <Layout
@@ -56,7 +58,13 @@ export default function WorkDetailPage({ params }: Props) {
           next: nextwork,
         }}
       >
-        <Content components={components} />
+        <EnlargeProvider
+          // TODO: parse pictures from MDX
+          pictures={[]}
+        >
+          <EnlargeModal />
+          <Content components={components} />
+        </EnlargeProvider>
       </Layout>
     </div>
   );

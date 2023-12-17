@@ -8,7 +8,7 @@ interface PictureProps extends React.ComponentProps<typeof Image> {
   disableEnlarge?: boolean;
 }
 
-export function Picture({ disableEnlarge, ...props }: PictureProps) {
+export function Picture({ disableEnlarge, onClick, ...props }: PictureProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -17,6 +17,7 @@ export function Picture({ disableEnlarge, ...props }: PictureProps) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{ position: "relative" }}
+      onClick={onClick}
     >
       <Image {...props} alt={props.alt} />
 
@@ -24,10 +25,6 @@ export function Picture({ disableEnlarge, ...props }: PictureProps) {
         <div className="absolute z-10 inset-0 cursor-pointer">
           <button
             className="absolute left-4 bottom-4 z-10 p-4 pt-2 pb-2 bg-neutral-700 bg-opacity-50 flex items-center gap-2 rounded-3xl text-white"
-            onClick={() => {
-              // Handle the pin action here
-              console.log("Pinned!");
-            }}
           >
             <PlusIcon /> Enlarge
           </button>
