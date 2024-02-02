@@ -1,6 +1,7 @@
 ---
 title: Grida Assistant
 date: 2021-10
+draft: true
 description:
 cover: "/works/2021-grida-assistant/0.png"
 tags:

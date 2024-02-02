@@ -1,6 +1,7 @@
 ---
 title: Grida VSCode
 date: 2023-12
+draft: true
 description:
 cover: "/works/2023-grida-vscode/0.png"
 tags:
