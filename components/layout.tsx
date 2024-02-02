@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import type { Post } from "contentlayer/generated";
+import type { Work } from "contentlayer/generated";
 
 /**
  * Portfolio (Work) page layout
@@ -10,8 +10,8 @@ export function Layout({
   meta,
   children,
 }: React.PropsWithChildren<{
-  meta: Post & {
-    next?: Post;
+  meta: Work & {
+    next?: Work;
   };
 }>) {
   return (

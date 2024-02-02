@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata, ResolvingMetadata } from "next";
 import { Layout } from "@/components/layout";
-import { allPosts } from "contentlayer/generated";
+import { allWorks } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import FuctionalPicture from "@/scaffolds/picture";
 import { EnlargeModal, EnlargeProvider } from "@/scaffolds/enlarge";
@@ -16,7 +16,7 @@ export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const work = allPosts.find((post) => post._raw.flattenedPath === params.work);
+  const work = allWorks.find((work) => work._raw.flattenedPath === params.work);
 
   if (!work) {
     throw new Error(`Could not find work with path ${params.work}`);
@@ -40,15 +40,14 @@ const components = {
 };
 
 export default function WorkDetailPage({ params }: Props) {
-  const work = allPosts.find(
-    (post) => post._raw.flattenedPath === params.work
+  const work = allWorks.find(
+    (work) => work._raw.flattenedPath === params.work
   )!;
   const Content = getMDXComponent(work.body.code);
   const nextworkkey = work.related?.[0];
-  const nextwork = allPosts.find(
-    (post) => post._raw.flattenedPath === nextworkkey
+  const nextwork = allWorks.find(
+    (work) => work._raw.flattenedPath === nextworkkey
   );
-
 
   return (
     <div>
