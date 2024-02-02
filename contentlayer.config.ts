@@ -31,6 +31,7 @@ export const Work = defineDocumentType(() => ({
     cover_background: { type: "string", required: false },
     related: { type: "list", of: { type: "string" }, required: false },
     featured: { type: "boolean", required: false },
+    draft: { type: "boolean", required: false },
     artists: {
       type: "list",
       of: {

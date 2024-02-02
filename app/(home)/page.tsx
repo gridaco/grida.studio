@@ -6,9 +6,9 @@ import HomeHeroCarousel from "@/components/home-hero/home-hero-carousel";
 import HomeHeroItem from "@/components/home-hero/home-hero-carousel-item";
 
 export default function Home() {
-  const works = allWorks.sort((a, b) =>
-    compareDesc(new Date(a.date), new Date(b.date))
-  );
+  const works = allWorks
+    .filter((w) => !w.draft)
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 
   const hero_works = works.filter((work) => work.featured);
 
