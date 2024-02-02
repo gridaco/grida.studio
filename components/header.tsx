@@ -37,7 +37,11 @@ export function Header() {
           <Link className="hover:underline" href="/about">
             <span>About</span>
           </Link>
-          <Link className="hover:underline" href="https://grida.co/bundle">
+          <Link
+            // this is hidden on mobile
+            className="hover:underline hidden md:block"
+            href="https://grida.co/bundle"
+          >
             <span>The Bundle</span>
           </Link>
           <Link className="hover:underline" href="/contact">
