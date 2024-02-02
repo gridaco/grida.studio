@@ -30,17 +30,17 @@ export function Header() {
           </div>
         </Link>
         <div className="flex-1" />
-        <div className="flex flex-row gap-8">
-          <Link href="/">
+        <div className="flex flex-row gap-5 md:gap-8">
+          <Link className="hover:underline" href="/">
             <span>Works</span>
           </Link>
-          <Link href="/about">
+          <Link className="hover:underline" href="/about">
             <span>About</span>
           </Link>
-          <Link href="https://grida.co/bundle">
+          <Link className="hover:underline" href="https://grida.co/bundle">
             <span>The Bundle</span>
           </Link>
-          <Link href="/contact">
+          <Link className="hover:underline" href="/contact">
             <span>Contact</span>
           </Link>
         </div>
