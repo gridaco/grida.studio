@@ -14,6 +14,8 @@ export function Layout({
     next?: Work;
   };
 }>) {
+  const { artists } = meta;
+
   return (
     <article>
       <WorkHeader
@@ -23,6 +25,7 @@ export function Layout({
         url={meta.external_url}
       />
       {children}
+      {artists?.length && <Artists artists={artists} />}
       {meta.next && (
         <NextWork
           work={meta.next._raw.flattenedPath}
@@ -93,5 +96,30 @@ export function WorkHeader({
         <p className="text-3xl font-semibold">{description}</p>
       </div>
     </header>
+  );
+}
+
+export function Artists({
+  artists,
+}: {
+  artists: NonNullable<Work["artists"]>;
+}) {
+  return (
+    <div className="my-10 flex flex-wrap gap-8">
+      {artists.map((artist, i) => (
+        <div key={i} className="">
+          <h3>{artist.name}</h3>
+          <p className="opacity-50 text-sm">{artist.role}</p>
+          {artist.instagram && (
+            <Link
+              className="opacity-50 hover:underline"
+              href={`https://instagram.com/${artist.instagram}`}
+            >
+              @{artist.instagram}
+            </Link>
+          )}
+        </div>
+      ))}
+    </div>
   );
 }

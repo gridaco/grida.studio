@@ -1,4 +1,17 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import {
+  defineDocumentType,
+  defineNestedType,
+  makeSource,
+} from "contentlayer/source-files";
+
+const Artist = defineNestedType(() => ({
+  name: "Artist",
+  fields: {
+    name: { type: "string" },
+    role: { type: "string" },
+    instagram: { type: "string" },
+  },
+}));
 
 export const Work = defineDocumentType(() => ({
   name: "Work",
@@ -18,6 +31,14 @@ export const Work = defineDocumentType(() => ({
     cover_background: { type: "string", required: false },
     related: { type: "list", of: { type: "string" }, required: false },
     featured: { type: "boolean", required: false },
+    artists: {
+      type: "list",
+      of: {
+        type: "nested",
+        def: Artist.def,
+      },
+      required: false,
+    },
   },
   computedFields: {
     url: {
