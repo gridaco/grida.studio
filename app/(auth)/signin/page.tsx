@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ChatBubbleIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import office_1 from "../../../public/images/office-1.jpg";
+import { useSearchParams } from "next/navigation";
 
 const HOST_NAME = process.env.NEXT_PUBLIC_HOST_NAME || "http://localhost:3000";
 
@@ -97,6 +98,14 @@ export default function SigninPage() {
 
 function ContinueWithGoogleButton() {
   const supabase = createPagesBrowserClient();
+  const search = useSearchParams();
+  const next = search.get("next");
+
+  const url = new URL(`${HOST_NAME}/auth/callback`);
+
+  if (next) {
+    url.searchParams.set("next", next);
+  }
 
   return (
     <button
@@ -105,7 +114,7 @@ function ContinueWithGoogleButton() {
         supabase.auth.signInWithOAuth({
           provider: "google",
           options: {
-            redirectTo: `${HOST_NAME}/auth/callback`,
+            redirectTo: url.toString(),
           },
         });
       }}

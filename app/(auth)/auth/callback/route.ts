@@ -8,6 +8,8 @@ import type { Database } from "@/lib/database.types";
 export async function GET(request: NextRequest) {
   const requestUrl = new URL(request.url);
   const code = requestUrl.searchParams.get("code");
+  const next = requestUrl.searchParams.get("next");
+  const redirect_uri = requestUrl.searchParams.get("redirect_uri");
 
   if (code) {
     const cookieStore = cookies();
@@ -15,6 +17,16 @@ export async function GET(request: NextRequest) {
       cookies: () => cookieStore,
     });
     await supabase.auth.exchangeCodeForSession(code);
+  }
+
+  // return
+
+  if (redirect_uri) {
+    return NextResponse.redirect(redirect_uri);
+  }
+
+  if (next) {
+    return NextResponse.redirect(`${requestUrl.origin}${next}`);
   }
 
   // URL to redirect to after sign in process completes
