@@ -28,6 +28,8 @@ export default function About() {
       </section>
       <section>
         <Image
+          priority
+          placeholder="blur"
           className="w-full"
           src={office_1}
           width={1200}
