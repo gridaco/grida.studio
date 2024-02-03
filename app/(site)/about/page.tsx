@@ -38,12 +38,13 @@ export default function About() {
         />
       </section>
       <section className="mt-20 md:mt-40 flex">
-        <div className="flex-1 hidden md:block" />
         <div className="flex-1 flex flex-col gap-8">
           <h2 className="flex-1 text-4xl font-medium">
-            Innovation by Design, Inspired by Technology
+            Innovation by Design,
+            <br />
+            Inspired by Technology
           </h2>
-          <p className="flex-1 text-sm font-regular text-neutral-500">
+          <p className="flex-1 text-sm font-regular text-neutral-500 max-w-xl">
             Welcome to Grida Studios, where the worlds of innovative tech and
             transformative design unite. At our core, we are visionaries. Each
             founding member carries with them a rich tapestry of experiences,
@@ -72,9 +73,11 @@ export default function About() {
       <section className="mt-20 md:mt-40 flex">
         <div className="flex-1 flex flex-col gap-8">
           <h2 className="flex-1 text-4xl font-medium">
-            Sustainable Branding - Our Pledge to the Future
+            Sustainable Branding -
+            <br />
+            Our Pledge to the Future
           </h2>
-          <p className="flex-1 text-sm font-regular text-neutral-500">
+          <p className="flex-1 text-sm font-regular text-neutral-500 max-w-xl">
             At Grida Studios, we understand the power of branding. But we don’t
             just create brands, we nurture them, ensuring they are sustainable
             and adaptive. We believe in designs that don’t just capture the
@@ -84,18 +87,23 @@ export default function About() {
         </div>
         <div className="flex-1 hidden md:block" />
       </section>
-      <section className="mt-40 flex flex-col md:flex-row gap-8">
-        <h2 className="flex-1 text-4xl font-medium">
-          Our Philosophy: Depth Beyond Design
-        </h2>
-        <p className="flex-1 text-sm font-regular text-neutral-500">
-          While our roots are embedded in technology, our heart lies in design.
-          We hold a profound belief that design isn’t just about aesthetics;
-          it&apos;s about understanding the underlying structures, purposes, and
-          needs. Our approach isn&apos;t merely skin-deep. We delve deep,
-          ensuring every project we undertake is infused with meaning, purpose,
-          and a touch of the Grida essence.
-        </p>
+      <section className="mt-20 md:mt-40 flex">
+        <div className="flex-1 flex flex-col gap-8">
+          <h2 className="flex-1 text-4xl font-medium">
+            Our Philosophy:
+            <br />
+            Depth Beyond Design
+          </h2>
+          <p className="flex-1 text-sm font-regular text-neutral-500 max-w-xl">
+            While our roots are embedded in technology, our heart lies in
+            design. We hold a profound belief that design isn’t just about
+            aesthetics; it&apos;s about understanding the underlying structures,
+            purposes, and needs. Our approach isn&apos;t merely skin-deep. We
+            delve deep, ensuring every project we undertake is infused with
+            meaning, purpose, and a touch of the Grida essence.
+          </p>
+        </div>
+        <div className="flex-1 hidden md:block" />
       </section>
       <footer className="mb-40" />
     </div>
