@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
-import { Header } from "@/components/header";
 import GoogleAnalytics from "@/components/ga";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,7 +27,6 @@ export default function RootLayout({
       <GoogleAnalytics gaid={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ?? ""} />
       <body className={inter.className}>
         {/* TODO: fix min-h-screen */}
-        <Header />
         {children}
       </body>
     </html>
