@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "About Grida Studios",
   metadataBase: new URL("https://studio.grida.co"),
   openGraph: {
-    images: "https://grida.co/bundle/og-image.jpg",
+    images: ["/images/office-1.jpg"],
   },
 };
 
