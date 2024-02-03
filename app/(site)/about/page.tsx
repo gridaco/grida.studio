@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
+import office_1 from "../../../public/images/office-1.jpg";
 
 export const metadata: Metadata = {
   title: "About",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="mt-40 flex flex-col gap-40 max-w-screen-lg m-auto">
+    <div className="mt-40 flex flex-col gap-20 max-w-screen-2xl m-auto">
       <section className="flex flex-row gap-8">
         <h2 className="flex-1 text-4xl font-medium">About Grida Studios</h2>
         <p className="flex-1 text-sm font-regular text-neutral-500">
@@ -25,15 +26,16 @@ export default function About() {
           staying a step ahead in a constantly evolving landscape.
         </p>
       </section>
-      <section className="md:gap-8 flex gap-4 items-between">
-        <Member
-          src="/team/universe.png"
-          name="Universe"
-          email="universe@grida.co"
+      <section>
+        <Image
+          className="w-full"
+          src={office_1}
+          width={1200}
+          height={800}
+          alt="office"
         />
-        <Member src="/team/ryu.png" name="Ryu" email="ryu@grida.co" />
-        <Member src="/team/han.png" name="Han" email="han@grida.co" />
       </section>
+
       <section className="mt-40 flex">
         <div className="flex-1" />
         <div className="flex-1 flex flex-col gap-8">
@@ -50,12 +52,21 @@ export default function About() {
             good but also function seamlessly.
             <br />
             <br />
-            <Link
-              className="underline"
-              href="https://github.com/gridaco">Check out our Github</Link>
-            {" "}to learn more about our works.
+            <Link className="underline" href="https://github.com/gridaco">
+              Check out our Github
+            </Link>{" "}
+            to learn more about our works.
           </p>
         </div>
+      </section>
+      <section className="md:gap-8 flex gap-4 items-between">
+        <Member
+          src="/team/universe.png"
+          name="Universe"
+          email="universe@grida.co"
+        />
+        <Member src="/team/ryu.png" name="Ryu" email="ryu@grida.co" />
+        <Member src="/team/han.png" name="Han" email="han@grida.co" />
       </section>
       <section className="mt-40 flex">
         <div className="flex-1 flex flex-col gap-8">
@@ -101,7 +112,7 @@ function Member({
 }) {
   return (
     <div className="flex flex-col gap-4 hover:underline">
-      <Image src={src} width={400} height={400} alt={email} />
+      <Image src={src} width={500} height={500} alt={email} />
       <span className="font-regular text-lg">{name}</span>
     </div>
   );
