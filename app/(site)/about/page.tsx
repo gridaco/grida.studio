@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="mt-40 flex flex-col gap-20 max-w-screen-2xl m-auto">
-      <section className="flex flex-row gap-8">
+    <div className="mt-40 flex flex-col gap-10 md:gap-20 max-w-screen-2xl m-auto">
+      <section className="flex flex-col md:flex-row gap-8">
         <h2 className="flex-1 text-4xl font-medium">About Grida Studios</h2>
         <p className="flex-1 text-sm font-regular text-neutral-500">
           Our uniqueness isn’t just in our experience, but in how we apply it.
@@ -37,9 +37,8 @@ export default function About() {
           alt="office"
         />
       </section>
-
-      <section className="mt-40 flex">
-        <div className="flex-1" />
+      <section className="mt-20 md:mt-40 flex">
+        <div className="flex-1 hidden md:block" />
         <div className="flex-1 flex flex-col gap-8">
           <h2 className="flex-1 text-4xl font-medium">
             Innovation by Design, Inspired by Technology
@@ -61,7 +60,7 @@ export default function About() {
           </p>
         </div>
       </section>
-      <section className="md:gap-8 flex gap-4 items-between">
+      <section className="md:gap-8 flex flex-col md:flex-row gap-4 md:items-between">
         <Member
           src="/team/universe.png"
           name="Universe"
@@ -70,7 +69,7 @@ export default function About() {
         <Member src="/team/ryu.png" name="Ryu" email="ryu@grida.co" />
         <Member src="/team/han.png" name="Han" email="han@grida.co" />
       </section>
-      <section className="mt-40 flex">
+      <section className="mt-20 md:mt-40 flex">
         <div className="flex-1 flex flex-col gap-8">
           <h2 className="flex-1 text-4xl font-medium">
             Sustainable Branding - Our Pledge to the Future
@@ -83,9 +82,9 @@ export default function About() {
             longevity and relevance.
           </p>
         </div>
-        <div className="flex-1" />
+        <div className="flex-1 hidden md:block" />
       </section>
-      <section className="mt-40 flex flex-row gap-8">
+      <section className="mt-40 flex flex-col md:flex-row gap-8">
         <h2 className="flex-1 text-4xl font-medium">
           Our Philosophy: Depth Beyond Design
         </h2>
@@ -114,7 +113,7 @@ function Member({
 }) {
   return (
     <div className="flex flex-col gap-4 hover:underline">
-      <Image src={src} width={500} height={500} alt={email} />
+      <Image src={src} width={800} height={800} alt={email} />
       <span className="font-regular text-lg">{name}</span>
     </div>
   );
