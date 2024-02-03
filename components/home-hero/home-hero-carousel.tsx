@@ -1,12 +1,16 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { SlashIcon } from '@radix-ui/react-icons';
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { SlashIcon } from "@radix-ui/react-icons";
 
-const HomeHeroCarousel = ({ children, interval = 5000, transition = { duration: 0.4 } }: React.PropsWithChildren<{
+const HomeHeroCarousel = ({
+  children,
+  interval = 5000,
+  transition = { duration: 0.4 },
+}: React.PropsWithChildren<{
   interval?: number;
-  transition?: { duration: number; }
+  transition?: { duration: number };
 }>) => {
   const [current, setCurrent] = useState(0);
   const childrenArray = React.Children.toArray(children);
@@ -38,24 +42,34 @@ const HomeHeroCarousel = ({ children, interval = 5000, transition = { duration: 
         {React.Children.map(children, (child, index) =>
           index === current ? (
             <motion.div
-              className='absolute h-full w-full'
+              className="absolute h-full w-full"
               key={index}
-              initial={hasMounted.current ? { x: '100vw' } : {}}
+              initial={hasMounted.current ? { x: "100vw" } : {}}
               animate={{ x: 0 }}
-              exit={{ x: '-100vw', transition: { duration: transition.duration, ease: 'easeInOut' } }}
-              transition={hasMounted.current ? { ...transition, ease: 'easeInOut' } : {}}
+              exit={{
+                x: "-100vw",
+                transition: {
+                  duration: transition.duration,
+                  ease: "easeInOut",
+                },
+              }}
+              transition={
+                hasMounted.current ? { ...transition, ease: "easeInOut" } : {}
+              }
             >
               {child}
             </motion.div>
           ) : null
         )}
       </AnimatePresence>
-      <div className="absolute bottom-0 right-0 p-4 md:p-12 text-white">
-        <span className='text-xl font-medium flex items-center gap-2'>
-          {current + 1}
-          <SlashIcon />
-          {childrenArray.length}
-        </span>
+      <div className="absolute bottom-0 left-0 right-0">
+        <div className="max-w-screen-2xl mx-auto p-4 md:p-12 flex justify-end">
+          <span className="text-xl text-white font-medium flex items-center gap-2">
+            {current + 1}
+            <SlashIcon />
+            {childrenArray.length}
+          </span>
+        </div>
       </div>
     </div>
   );
