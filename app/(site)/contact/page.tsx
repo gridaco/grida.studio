@@ -11,8 +11,8 @@ export default function Contact() {
             <h1 className="text-2xl font-regular">studios@grida.co</h1>
           </Link>
           <span className="text-2xl">/</span>
-          <Link className="hover:underline" href="mailto:han@grida.co">
-            <h1 className="text-2xl font-regular">han@grida.co</h1>
+          <Link className="hover:underline" href="mailto:universe@grida.co">
+            <h1 className="text-2xl font-regular">universe@grida.co</h1>
           </Link>
         </div>
       </section>
@@ -24,12 +24,6 @@ export default function Contact() {
           href="https://cal.com/universe-from-grida/30min"
         >
           <h1 className="text-2xl font-regular">RSVP 30 Minutes — @UNIVERSE</h1>
-        </Link>
-        <Link
-          className="hover:underline"
-          href="https://cal.com/universe-from-grida/30min"
-        >
-          <h1 className="text-2xl font-regular">RSVP 30 Minutes — @HAN</h1>
         </Link>
         <Link
           className="hover:underline"
