@@ -21,7 +21,6 @@ related:
 ![](/works/2024-career-note/4.png)
 ![](/works/2024-career-note/5.png)
 ![](/works/2024-career-note/6.png)
-![](/works/2024-career-note/6.png)
 
 <video
   loop
