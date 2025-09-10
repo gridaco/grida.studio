@@ -7,7 +7,7 @@ description: This service helps anyone quickly create a professional portfolio u
 cover: "/works/2024-career-note/1.png"
 cover_video: /works/2024-career-note/teaser.mp4
 tags:
-  - Web solution
+  - Web Solution
   - Service
   - AI
   - Tech
